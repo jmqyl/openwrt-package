@@ -139,6 +139,25 @@ svn export https://github.com/openwrt/packages/trunk/net/shadowsocks-libev
 svn export https://github.com/kenzok8/jell/trunk/gn
 svn export https://github.com/kenzok8/jell/trunk/luci-app-bridge
 
+###########自定义部分##################
+svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser
+git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomcat
+git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomato
+#svn export https://github.com/Boos4721/OpenWrt-Packages/trunk/adbyby
+#git clone --depth 1 https://github.com/aboutboy/luci-theme-butongwifi
+#svn export https://github.com/Aslin-Ameng/luci-theme-Night/trunk/luci-theme-Night
+#git clone --depth 1 https://github.com/gngpp/luci-theme-design
+#git clone --depth 1 https://github.com/gngpp/luci-app-design-config
+#svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-bypass
+#git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
+#git clone --depth 1 https://github.com/immortalwrt/homeproxy
+
+# 修改nps源为yisier
+sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/codeload.github.com\/yisier\/nps\/tar.gz\/v$(PKG_VERSION)?/g' nps/Makefile
+sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.26.16/g' nps/Makefile
+sed -i 's/PKG_HASH:=.*/PKG_HASH:=8e1405cc69b3d509d9397c2423b6b6a7e3ee8a6b69ec3481e15f9846ab0c9852/g' nps/Makefile
+######################################
+
 git_sparse_clone master "https://github.com/coolsnowwolf/packages" "leanpack" net/miniupnpd net/mwan3 \
 net/amule net/baidupcs-web multimedia/gmediarender net/go-aliyundrive-webdav \
 net/qBittorrent-static net/qBittorrent libs/qtbase libs/qttools libs/rblibtorrent \
