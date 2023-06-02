@@ -210,6 +210,10 @@ git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomato
 sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/codeload.github.com\/yisier\/nps\/tar.gz\/v$(PKG_VERSION)?/g' nps/Makefile
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.26.16/g' nps/Makefile
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=8e1405cc69b3d509d9397c2423b6b6a7e3ee8a6b69ec3481e15f9846ab0c9852/g' nps/Makefile
+
+#删除UPX
+rm -rf upx
+rm -rf upx-static
 ######################################
 
 exit 0
