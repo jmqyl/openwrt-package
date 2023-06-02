@@ -5,12 +5,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=nps
-PKG_VERSION:=0.26.10
+PKG_VERSION:=0.26.16
 PKG_RELEASE:=$(AUTORELEASE)
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://codeload.github.com/ehang-io/nps/tar.gz/v$(PKG_VERSION)?
-PKG_HASH:=1b2fe9d251f55105d65027a1cee464f65d2f6ab3bd4a20e4655e5135db68aee7
+PKG_SOURCE_URL:=https://codeload.github.com/yisier/nps/tar.gz/v$(PKG_VERSION)?
+PKG_HASH:=8e1405cc69b3d509d9397c2423b6b6a7e3ee8a6b69ec3481e15f9846ab0c9852
 
 PKG_LICENSE:=Apache-2.0
 PKG_LICENSE_FILE:=LICENSE
