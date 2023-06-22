@@ -211,6 +211,13 @@ sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/codeload.github.com\/yisi
 sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.26.16.1/g' nps/Makefile
 sed -i 's/PKG_HASH:=.*/PKG_HASH:=2fb8a19d2bd34d6a009f14d1c797169f09801eb814f57ebf10156ffdb78f2457/g' nps/Makefile
 
+#luci-app-nps（修改nps显示位置）
+sed -i 's/"services"/"vpn"/g'  nps/luasrc/controller/nps.lua
+sed -i 's/\[services\]/\[vpn\]/g'  nps/luasrc/view/nps/nps_status.htm
+
+sed -i 's/"services"/"vpn"/g'  luci-app-npc/luasrc/controller/npc.lua
+sed -i 's/\[services\]/\[vpn\]/g' luci-app-npc/luasrc/view/npc/npc_status.htm
+
 #删除UPX
 rm -rf upx
 rm -rf upx-static
