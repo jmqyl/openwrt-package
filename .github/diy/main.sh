@@ -205,6 +205,7 @@ git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomato
 #svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-bypass
 #git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
 #git clone --depth 1 https://github.com/immortalwrt/homeproxy
+svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-accesscontrol
 
 # 修改nps源为yisier
 sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/codeload.github.com\/yisier\/nps\/tar.gz\/v$(PKG_VERSION)?/g' nps/Makefile
