@@ -200,7 +200,7 @@ svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser
 git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomcat
 git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomato
 rm -rf luci-app-wechatpush
-git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush.git
+git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush luci-app-serverchan
 #svn export https://github.com/Boos4721/OpenWrt-Packages/trunk/adbyby
 #git clone --depth 1 https://github.com/aboutboy/luci-theme-butongwifi
 #svn export https://github.com/Aslin-Ameng/luci-theme-Night/trunk/luci-theme-Night
