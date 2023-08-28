@@ -196,6 +196,7 @@ sed -i 's/PKG_SOURCE_DATE:=2/PKG_SOURCE_DATE:=3/' transmission-web-control/Makef
 
 ###########自定义部分##################
 svn export https://github.com/Hyy2001X/AutoBuild-Packages/trunk/luci-app-npc
+rm -rf luci-app-filebrowser
 svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser
 git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomcat
 git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomato
