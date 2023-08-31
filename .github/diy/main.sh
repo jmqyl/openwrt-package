@@ -206,7 +206,7 @@ git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush luci-ap
 rm -rf brook
 svn export https://github.com/breakings/OpenWrt/trunk/general/brook
 rm -rf hysteria
-svn export https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria
+svn export https://github.com/breakings/OpenWrt/trunk/general/hysteria
 
 
 #svn export https://github.com/Boos4721/OpenWrt-Packages/trunk/adbyby
