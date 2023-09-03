@@ -48,7 +48,7 @@ jobs:
         git rm -r --cache * >/dev/null 2>&1 &
         rm -rf `find ./* -maxdepth 0 -type d ! -name "diy" ! -name "mysh"` >/dev/null 2>&1
         rm -rf .github/diy
-        svn export https://github.com/kenzok8/small-package/trunk/.github/diy
+        svn export https://github.com/kenzok8/small-package/trunk/.github/diy .github/diy
         chmod +x .github/diy/${{matrix.target}}.sh
         chmod +x .github/mysh/my.sh
         $GITHUB_WORKSPACE/.github/diy/${{matrix.target}}.sh
