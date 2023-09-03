@@ -125,7 +125,7 @@ git clone --depth 1 https://github.com/SSSSSimon/tencentcloud-openwrt-plugin-ddn
 git clone --depth 1 https://github.com/Tencent-Cloud-Plugins/tencentcloud-openwrt-plugin-cos && mv -n tencentcloud-openwrt-plugin-cos/tencentcloud_cos ./luci-app-tencentcloud-cos; rm -rf tencentcloud-openwrt-plugin-cos
 git clone --depth 1 https://github.com/kiddin9/openwrt-packages && mv -n openwrt-packages/luci-app-bypass openwrt-packages/luci-app-fileassistant ./ ; rm -rf openwrt-packages
 git clone --depth 1 https://github.com/immortalwrt/packages && mv -n packages/net/cdnspeedtest ./ ; rm -rf packages
-git clone --depth 1 https://github.com/immortalwrt/luci && mv -n luci/applications/luci-app-gost ./ ; rm -rf luci
+git clone --depth 1 https://github.com/immortalwrt/luci && mv -n luci/applications/luci-app-gost luci/applications/luci-app-filebrowser ./ ; rm -rf luci
 git clone --depth 1 https://github.com/mingxiaoyu/luci-app-cloudflarespeedtest cloudflarespeedtest && mv -n cloudflarespeedtest/applications/* ./;rm -rf cloudflarespeedtest
 git clone --depth 1 https://github.com/doushang/luci-app-shortcutmenu luci-shortcutmenu && mv -n luci-shortcutmenu/luci-app-shortcutmenu ./ ; rm -rf luci-shortcutmenu
 git clone --depth 1 https://github.com/sbilly/netmaker-openwrt && mv -n netmaker-openwrt/netmaker ./; rm -rf netmaker-openwrt
@@ -167,7 +167,7 @@ net/ariang admin/netdata net/transmission-web-control net/rp-pppoe net/tailscale
 
 git_sparse_clone openwrt-22.03 "https://github.com/openwrt/luci" "opluci" applications/luci-app-watchcat \
 
-mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
+#mv -n openwrt-passwall/* ./ ; rm -Rf openwrt-passwall
 mv -n openwrt-package/* ./ ; rm -Rf openwrt-package
 mv -n openwrt-app-actions/applications/* ./;rm -rf openwrt-app-actions
 sed -i \
@@ -191,49 +191,9 @@ sed -i 's/ +uhttpd-mod-ubus//' luci-app-packet-capture/Makefile
 sed -i 's/	ip.neighbors/	luci.ip.neighbors/' luci-app-wifidog/luasrc/model/cbi/wifidog/wifidog_cfg.lua
 #sed -i -e 's/nas/services/g' -e 's/NAS/Services/g' $(grep -rl 'nas\|NAS' luci-app-fileassistant)
 #sed -i -e 's/nas/services/g' -e 's/NAS/Services/g' $(grep -rl 'nas\|NAS' luci-app-alist)
+#find . -type f -name Makefile -exec sed -i 's/PKG_BUILD_FLAGS:=no-mips16/PKG_USE_MIPS16:=0/g' {} +
 sed -i '65,73d' adguardhome/Makefile
 sed -i 's/PKG_SOURCE_DATE:=2/PKG_SOURCE_DATE:=3/' transmission-web-control/Makefile
-
-###########自定义部分##################
-svn export https://github.com/Hyy2001X/AutoBuild-Packages/trunk/luci-app-npc
-rm -rf luci-app-filebrowser
-rm -rf filebrowser
-svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser
-git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomcat
-git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomato
-rm -rf luci-app-wechatpush
-git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush luci-app-serverchan
-rm -rf brook
-svn export https://github.com/breakings/OpenWrt/trunk/general/brook
-#rm -rf hysteria
-#svn export https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria
-
-
-#svn export https://github.com/Boos4721/OpenWrt-Packages/trunk/adbyby
-#git clone --depth 1 https://github.com/aboutboy/luci-theme-butongwifi
-#svn export https://github.com/Aslin-Ameng/luci-theme-Night/trunk/luci-theme-Night
-#git clone --depth 1 https://github.com/gngpp/luci-theme-design
-#git clone --depth 1 https://github.com/gngpp/luci-app-design-config
-#svn export https://github.com/kiddin9/openwrt-packages/trunk/luci-app-bypass
-#git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
-#git clone --depth 1 https://github.com/immortalwrt/homeproxy
-#svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-accesscontrol
-
-# 修改nps源为yisier
-sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/codeload.github.com\/yisier\/nps\/tar.gz\/v$(PKG_VERSION)?/g' nps/Makefile
-sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=0.26.16.1/g' nps/Makefile
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=2fb8a19d2bd34d6a009f14d1c797169f09801eb814f57ebf10156ffdb78f2457/g' nps/Makefile
-
-#luci-app-nps（修改nps显示位置）
-sed -i 's/"services"/"vpn"/g'  nps/luasrc/controller/nps.lua
-sed -i 's/\[services\]/\[vpn\]/g'  nps/luasrc/view/nps/nps_status.htm
-
-sed -i 's/"services"/"vpn"/g'  luci-app-npc/luasrc/controller/npc.lua
-sed -i 's/\[services\]/\[vpn\]/g' luci-app-npc/luasrc/view/npc/npc_status.htm
-
-#删除UPX
-rm -rf upx
-rm -rf upx-static
-######################################
-
+#find . -type f -name Makefile -exec sed -i 's/PKG_BUILD_FLAGS:=no-mips16/PKG_USE_MIPS16:=0/g' {} +
 exit 0
+
