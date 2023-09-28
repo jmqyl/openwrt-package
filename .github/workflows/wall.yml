@@ -6,6 +6,7 @@ on:
       - '.github/workflows/wall.yml'
       - '.github/diy/main.sh'
       - '.github/mysh/my.sh'
+      - '.github/mysh/edit_main.sh'
   schedule:
     - cron: 0 */8 * * *
   repository_dispatch:
