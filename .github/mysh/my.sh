@@ -13,8 +13,8 @@ rm -rf brook
 svn export https://github.com/breakings/OpenWrt/trunk/general/brook
 #rm -rf hysteria
 #svn export https://github.com/xiaorouji/openwrt-passwall/trunk/hysteria
-rm -rf v2ray-core
-svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-core
+#rm -rf v2ray-core
+#svn export https://github.com/xiaorouji/openwrt-passwall-packages/trunk/v2ray-core
 
 
 #svn export https://github.com/Boos4721/OpenWrt-Packages/trunk/adbyby
