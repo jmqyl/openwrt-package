@@ -52,6 +52,7 @@ svn export https://github.com/breakings/OpenWrt/trunk/general/xray-plugin
 #git clone --depth 1 https://github.com/jerrykuku/lua-maxminddb
 #git clone --depth 1 https://github.com/immortalwrt/homeproxy
 #svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-accesscontrol
+git clone --depth 1 https://github.com/gngpp/luci-app-watchcat-plus
 
 # 修改nps源为yisier
 sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/codeload.github.com\/yisier\/nps\/tar.gz\/v$(PKG_VERSION)?/g' nps/Makefile
