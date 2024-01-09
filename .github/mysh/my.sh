@@ -66,6 +66,10 @@ sed -i 's/\[services\]/\[vpn\]/g'  nps/luasrc/view/nps/nps_status.htm
 sed -i 's/"services"/"vpn"/g'  luci-app-npc/luasrc/controller/npc.lua
 sed -i 's/\[services\]/\[vpn\]/g' luci-app-npc/luasrc/view/npc/npc_status.htm
 
+#修改luci-app-autotimeset显示位置
+sed -i 's/"control"/"system"/g'  luci-app-autotimeset/luasrc/controller/autotimeset.lua
+sed -i 's/\[control\]/\[system\]/g'  luci-app-autotimeset/luasrc/view/autotimeset/log.htm
+
 #删除UPX
 rm -rf upx
 rm -rf upx-static
