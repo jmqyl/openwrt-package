@@ -28,6 +28,8 @@ git clone --depth 1 https://github.com/Leo-Jo-My/luci-theme-opentomato
 rm -rf luci-app-wechatpush
 git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush luci-app-serverchan
 
+git clone -b main https://github.com/padavanonly/luci-app-mwan3helper-chinaroute luci-app-mwan3helper-chinaroute
+
 
 #kenzok8/wall(将kenzok8自建常用的内核更改为breakings/OpenWrt/blob/main/diy-part2.sh中的源，只添加breakings中有的源)
 git_sparse_clone main "https://github.com/xiaorouji/openwrt-passwall-packages" "xiaorouji" chinadns-ng dns2socks hysteria ipt2socks \
@@ -88,6 +90,7 @@ sed -i 's/\[control\]/\[system\]/g'  luci-app-autotimeset/luasrc/view/autotimese
 #删除UPX
 rm -rf upx
 rm -rf upx-static
+
 ######################################
 
 exit 0
