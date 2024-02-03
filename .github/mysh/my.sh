@@ -51,6 +51,8 @@ general/smartdns general/xray-core general/xray-plugin
 #git clone --depth 1 https://github.com/immortalwrt/homeproxy
 #git_sparse_clone master "https://github.com/coolsnowwolf/luci" "coolsnowwolf" applications/luci-app-accesscontrol
 git clone --depth 1 https://github.com/gngpp/luci-app-watchcat-plus
+rm -rf msd_lite
+git_sparse_clone master "https://github.com/immortalwrt/packages" "immortalwrt" net/msd_lite
 
 
 ############暂时替换原kenzok8/small-package/.github/diy/main.sh中无法使用的svn命令############
