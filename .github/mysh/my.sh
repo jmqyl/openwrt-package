@@ -14,6 +14,20 @@ function git_sparse_clone() {
   cd ..
   rm -rf $localdir
   }
+
+  function git_svn() {
+  #branch="$1" rurl="$2" localdir="$3" && shift 3
+  branch="$1" rurl="$2" localdir="temp" && shift 3
+  #git clone -b $branch --depth 1 --filter=blob:none --sparse $rurl $localdir
+  git clone -b $branch --single-branch --no-tags --depth 1 --filter=blob:none --no-checkout $rurl $localdir
+  cd $localdir
+  #git sparse-checkout init --cone
+  #git sparse-checkout set $@
+  git checkout $branch -- $@
+  mv -n $@ ../
+  cd ..
+  rm -rf $localdir
+  }
 function mvdir() {
 mv -n `find $1/* -maxdepth 0 -type d` ./
 rm -rf $1
@@ -55,6 +69,15 @@ rm -rf msd_lite
 git_sparse_clone master "https://github.com/immortalwrt/packages" "immortalwrt" net/msd_lite
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go ddnsgo && mv -n ddnsgo/ddns-go ./; rm -rf ddnsgo
 
+
+#####bypass依赖#####
+git_svn master https://github.com/fw876/helloworld shadowsocksr-libev redsocks2 lua-neturl dns2tcp
+
+#####luci-app-v2raya依赖#####
+git_svn master https://github.com/v2rayA/v2raya-openwrt v2raya
+
+#####luci-app-lucky及依赖#####
+git_svn master https://github.com/sirpdboy/luci-app-lucky lucky
 
 ############暂时替换原kenzok8/small-package/.github/diy/main.sh中无法使用的svn命令############
 git_sparse_clone master "https://github.com/immortalwrt/luci" "temp" applications/luci-app-homeproxy
