@@ -17,7 +17,7 @@ function git_sparse_clone() {
 
   function git_svn() {
   #branch="$1" rurl="$2" localdir="$3" && shift 3
-  branch="$1" rurl="$2" && shift 3
+  branch="$1" rurl="$2" && shift 2
   #git clone -b $branch --depth 1 --filter=blob:none --sparse $rurl $localdir
   git clone -b $branch --single-branch --no-tags --depth 1 --filter=blob:none --no-checkout $rurl tempxx
   cd tempxx
