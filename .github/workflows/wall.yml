@@ -46,7 +46,7 @@ jobs:
         chmod +x .github/diy/${{matrix.target}}.sh
         chmod +x .github/mysh/my.sh
         chmod +x .github/mysh/edit_main.sh        
-        git clone -b ${{matrix.target}} https://github.com/fichenx/openwrt-package.git ${{matrix.target}}
+        git clone -b ${{matrix.target}} https://github.com/jmqyl/openwrt-package.git ${{matrix.target}}
         cd ${{matrix.target}}
         git rm -r --cache * >/dev/null 2>&1 &
         rm -rf `find ./* -maxdepth 0 -type d ! -name "diy" ! -name "mysh"` >/dev/null 2>&1
@@ -76,7 +76,7 @@ jobs:
         if git status --porcelain | grep .; then
           git add .
           git commit -am "update $(date '+%Y-%m-%d %H:%M:%S')"
-          git push --quiet "https://${{ secrets.ACCESS_TOKEN }}@github.com/fichenx/openwrt-package.git" HEAD:${{matrix.target}}
+          git push --quiet "https://${{ secrets.ACCESS_TOKEN }}@github.com/jmqyl/openwrt-package.git" HEAD:${{matrix.target}}
         else
           echo "nothing to commit"
           exit 0
