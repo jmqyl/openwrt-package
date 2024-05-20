@@ -7,8 +7,8 @@ on:
       - '.github/diy/main.sh'
       - '.github/mysh/my.sh'
       - '.github/mysh/edit_main.sh'
-  schedule:
-    - cron: 0 */8 * * *
+  #schedule:
+  #  - cron: 0 */8 * * *
   repository_dispatch:
   workflow_dispatch:
     inputs:
