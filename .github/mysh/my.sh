@@ -45,7 +45,7 @@ git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush luci-ap
 git clone -b main https://github.com/padavanonly/luci-app-mwan3helper-chinaroute luci-app-mwan3helper-chinaroute
 
 rm -rf luci-app-msd_lite
-git clone https://github.com/hejiadong0608/luci-app-msd_lite luci-app-msd_lite
+git clone main https://github.com/hejiadong0608/luci-app-msd_lite luci-app-msd_lite
 
 
 #kenzok8/wall(将kenzok8自建常用的内核更改为breakings/OpenWrt/blob/main/diy-part2.sh中的源，只添加breakings中有的源)
