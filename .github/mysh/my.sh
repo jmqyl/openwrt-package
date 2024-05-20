@@ -44,7 +44,7 @@ git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush luci-ap
 
 git clone -b main https://github.com/padavanonly/luci-app-mwan3helper-chinaroute luci-app-mwan3helper-chinaroute
 
-rm -rf luci-app_msd_lite
+rm -rf luci-app-msd_lite
 git clone https://github.com/hejiadong0608/luci-app-msd_lite luci-app-msd_lite
 
 
